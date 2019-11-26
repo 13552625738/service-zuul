@@ -1,0 +1,19 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8769
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**    #浏览器访问url http://localhost:8769/api-a/jeecg-boot/czl/demo/hi?name=2222222222
+      serviceId: jeecg-boot #jeecg-boot项目的服务名
+    api-b:
+      path: /api-b/**
+      serviceId: feigndemo #feigndemo项目的服务名
+
+
